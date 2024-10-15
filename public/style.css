@@ -1,0 +1,69 @@
+@font-face {
+    font-family: 'Klarissa Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Klarissa Regular'), url('fonts/klarissa/Klarissa.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Klarissa Contour Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Klarissa Contour Regular'), url('fonts/klarissa/KlarissaContour.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Klarissa Shadow Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Klarissa Shadow Regular'), url('fonts/klarissa/KlarissaShadow.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Simplement';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Simplement'), url('fonts/simplement/simplement.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Shatter';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Shatter'), url('fonts/shatterstd/shatterstd.woff') format('woff');
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Klarissa Regular', serif;
+    color: #fff;
+    letter-spacing: -4px;
+    background-color: black;
+    overflow: hidden; /* Prevent scrolling on the container itself */
+
+    /*display: flex;*/
+}
+
+#content {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: transparent;
+    z-index: 1;
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
