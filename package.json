@@ -12,6 +12,7 @@
   },
   "private": true,
   "dependencies": {
+    "aos": "^2.3.4",
     "three": "^0.169.0"
   }
 }

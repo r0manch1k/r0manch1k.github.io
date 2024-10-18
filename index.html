@@ -3,23 +3,48 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="/public/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/public/images/favicon.ico">
     <title>thesokolovsky.ru</title>
-    <link rel="stylesheet" href="public/style.css">
+    <link rel="stylesheet" href="public/style.css"/>
+
+    <!-- Add AOS library here -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+          integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+            integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- Add Three.js library here -->
     <script type="importmap">
         {
-          "imports": {
-            "three": "https://cdn.jsdelivr.net/npm/three@v0.169.0/build/three.module.js",
-            "three/addons/": "https://cdn.jsdelivr.net/npm/three@v0.169.0/examples/jsm/"
-          }
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@v0.169.0/build/three.module.js",
+                "three/addons/": "https://cdn.jsdelivr.net/npm/three@v0.169.0/examples/jsm/"
+            }
         }
     </script>
+</head>
 <body>
-<div id="content">
-    <h1 style="font-family: 'Shatter', serif; font-size: 95px;">the</h1>
-    <h1 style="font-family: 'Klarissa Regular', serif; font-size: 80px;">sokolovsky</h1>
+<div id="content" role="main">
+    <div id="name" data-aos="fade-down">
+        <span id="the">the</span>
+        <span id="sokolovsky">sokolovsky.ru</span>
+    </div>
+    <div id="card-external" data-aos="fade-up" role="contentinfo">
+        <div id="card-internal">
+<!--            I'm a dvfu student, living in Vladivostok-->
+        </div>
+    </div>
+    <canvas></canvas>
 </div>
-<script type="module" src="/js/main.js"></script>
 </body>
+<script>
+    AOS.init({
+        once: true,
+        duration: 1500
+    });
+</script>
+<script type="module" src="/js/main.js"></script>
 </html>
