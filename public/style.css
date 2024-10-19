@@ -43,81 +43,123 @@
     padding: 0;
 }
 
-html, body {
-    align-items: center;
-    min-height: 100vh;
-}
-
-
-#content {
+body {
+    width: 100vw;
     height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
+    font-size: medium;
     overflow: hidden;
 }
 
-#name {
-    position: relative;
+div {
     display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+.sparkle {
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+}
+
+#sparkle-bottom-right {
+    bottom: 0.5em;
+    right: 0.25em;
+}
+
+#title {
+    width: 100%;
+    padding-left: 1rem;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     gap: 0.05rem;
-    font-size: calc(40px + 90 * (100vw - 330px) / 1110);
-    color: #ffffff;
-    -webkit-text-stroke: 0.05rem #4664b4;
-    background-color: transparent;
-    text-shadow:
-            0 0.01em 1px #26458f,
-            0 0.02em 1px #26458f,
-            0 0.03em 1px #26458f,
-            0 0.04em 1px #26458f,
-            0 0.05em 1px #26458f,
-            0 0.06em 1px #26458f,
-            0 0.07em 1px #26458f,
-            0 0.08em 1px #26458f,
-            0 0.09em 1px #26458f,
-            0 0.10em 1px color-mix(in oklab, #26458f, #c153af),
-            0 0 8px #d0c3f5,
-            0 0 15px #793570,
-            0 0 5px #228dff,
-            0 0 5px #228dff;
-    z-index: 2;
-    /*text-transform: uppercase;*/
+    font-size: calc(40px + 30 * (100vw - 330px) / 1110);
+    letter-spacing: -0.05em;
+    color: white;
+    text-shadow: 0 0 0.07em #ffffff;
 }
 
 #the {
-    padding-top: 0.1em;
+    padding-top: 0.06em;
     font-family: 'Shatter', serif;
     font-size: 1em;
 }
 
 #sokolovsky {
     font-family: 'Klarissa Regular', serif;
-    font-size: 0.8em;
-    letter-spacing: -0.03em;
+    font-size: 0.85em;
+}
+
+#title:hover {
+    /*text-decoration: underline;*/
+    /*text-decoration-thickness: 0.02em;*/
+    /*text-decoration-color: rgba(255, 255, 255, 0.5);*/
+    cursor: pointer;
 }
 
 #card-external {
-    width: calc(270px + 450 * (100vw - 330px) / 1110);
-    height: calc(250px + 150 * (100vw - 330px) / 1110);
+    width: calc(270px + 250 * (100vw - 330px) / 1110);
+    height: calc(250px + 100 * (100vw - 330px) / 1110);
     background-color: black;
     border-radius: 1em;
     padding: 0.5em;
-    opacity: 0.7;
-    z-index: 1;
+    opacity: 0.9;
 }
 
 #card-internal {
+    display: block;
     width: 100%;
-    height: 100%;
+    padding: 0.5em;
+    height: calc(100% - 2 * 0.5em);
     font-family: 'Simplement', serif;
-    font-size: 25px;
+    font-size: 1.3em;
     color: white;
     background: transparent;
-    border: white 0.03em solid;
-    border-radius: 0.5em;
-    z-index: 1;
+    border: white 0.05rem solid;
+    border-radius: 0.5rem;
+}
+
+#contact {
+    margin-top: 2.5rem;
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    position: absolute;
+}
+
+#contact a {
+    position: relative;
+    display: block;
+    width: 2.5em;
+    height: 2em;
+}
+
+#contact #icon-github {
+    background: url("../public/img/icon-github.svg") no-repeat top left;
+    background-size: contain;
+}
+
+#contact #icon-spotify {
+    background: url("../public/img/icon-spotify.svg") no-repeat top left;
+    background-size: contain;
+}
+
+#contact #icon-vkontakte {
+    background: url("../public/img/icon-vkontakte.svg") no-repeat top left;
+    background-size: contain;
+}
+
+#contact #icon-telegram {
+    background: url("../public/img/icon-telegram.svg") no-repeat top left;
+    background-size: contain;
 }
 
 canvas {
@@ -125,7 +167,6 @@ canvas {
     position: fixed;
     top: 0;
     left: 0;
-    /*width: 100%;*/
     height: 100vh;
-    z-index: 0;
+    z-index: -1;
 }

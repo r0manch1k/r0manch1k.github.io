@@ -11,12 +11,14 @@ let colors = [
     0xf04114,
     0xf6019d,
     0x9700cc,
-    0xffd319
+    0xffd319,
+    0xd24922
 ]
 
 function init() {
     scene = new THREE.Scene();
     camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.1, 10000);
+    // camera.rotation.x = 0 * Math.PI / 180;
     renderer = new THREE.WebGLRenderer({antialias: true, alpha: true});
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(window.devicePixelRatio ? window.devicePixelRatio : 1);
@@ -45,11 +47,11 @@ function init() {
     grid.position.y = -450;
     scene.add(grid);
 
-    // scene.fog = new THREE.Fog(0xfff, -2000, 15000);
-    scene.fog = new THREE.FogExp2(0xf6019d, 0.0001);
+    scene.fog = new THREE.Fog(0x9700cc, -2000, 15000);
+    // scene.fog = new THREE.FogExp2(0xfff, 0.0001);
 
     const geometry = new THREE.IcosahedronGeometry(150, 5);
-    const material = new THREE.MeshBasicMaterial({ color: 0xfaaa0a });
+    const material = new THREE.MeshBasicMaterial({ color: 0xffd319 });
     const sphere = new THREE.Mesh(geometry, material);
     sphere.position.set(0, 0, -2500);
     scene.add(sphere);
@@ -63,7 +65,7 @@ function init() {
     const bloomPass = new UnrealBloomPass(
         new THREE.Vector2(window.innerWidth, window.innerHeight),
         10,
-        1,
+        1.2,
         0
     );
     composer.renderToScreen = true;

@@ -1,0 +1,21 @@
+<svg width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="icon-spotify" filter="url(#filter0_d_10_8)">
+<g id="Dribbble-Light-Preview">
+<g id="icons">
+<path id="spotify-[#162]" fill-rule="evenodd" clip-rule="evenodd" d="M40.8088 24.9468C33.557 20.6403 21.5937 20.2437 14.6682 22.3452C13.5567 22.6805 12.3822 22.0549 12.0447 20.9412C11.7072 19.8297 12.335 18.6551 13.4465 18.3176C21.3957 15.9034 34.6078 16.3689 42.9575 21.3257C43.9565 21.9197 44.285 23.2117 43.691 24.2107C43.1015 25.2097 41.8055 25.5408 40.8088 24.9468ZM40.5725 31.3254C40.064 32.1512 38.984 32.4096 38.1582 31.9033C32.1125 28.1863 22.892 27.1107 15.7393 29.282C14.81 29.561 13.8313 29.0389 13.55 28.1119C13.271 27.1849 13.793 26.2058 14.72 25.9246C22.8897 23.4451 33.0485 24.6468 39.9943 28.915C40.82 29.4213 41.0787 30.5019 40.5725 31.3254ZM37.8185 37.4514C37.4135 38.1129 36.5517 38.3222 35.8902 37.9172C30.6072 34.6885 23.9563 33.9598 16.124 35.7485C15.3703 35.9218 14.6165 35.4487 14.4455 34.6927C14.2722 33.939 14.7425 33.1884 15.5007 33.0151C24.071 31.0554 31.4217 31.8986 37.3527 35.5233C38.0142 35.9283 38.2235 36.7899 37.8185 37.4514ZM27.5 5C15.0733 5 5 15.0733 5 27.5C5 39.9267 15.0733 50 27.5 50C39.9267 50 50 39.9267 50 27.5C50 15.0755 39.9267 5 27.5 5Z" fill="white"/>
+</g>
+</g>
+</g>
+<defs>
+<filter id="filter0_d_10_8" x="0" y="0" width="55" height="55" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset/>
+<feGaussianBlur stdDeviation="2.5"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_10_8"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_10_8" result="shape"/>
+</filter>
+</defs>
+</svg>

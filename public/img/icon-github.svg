@@ -1,0 +1,19 @@
+<svg width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="icon-github" filter="url(#filter0_d_8_4)">
+<g id="icons">
+<path id="github-[#142]" fill-rule="evenodd" clip-rule="evenodd" d="M27.5 5C39.9267 5 50 15.3273 50 28.0691C50 38.2593 43.5605 46.9039 34.6257 49.9571C33.485 50.1844 33.08 49.4639 33.08 48.8497C33.08 48.0892 33.107 45.6053 33.107 42.5183C33.107 40.3673 32.387 38.9634 31.5792 38.2479C36.59 37.6764 41.855 35.7255 41.855 26.865C41.855 24.345 40.982 22.2886 39.5375 20.6731C39.7715 20.0903 40.5432 17.7439 39.317 14.5669C39.317 14.5669 37.4315 13.9487 33.1362 16.9322C31.3385 16.4215 29.4125 16.1645 27.5 16.1555C25.5875 16.1645 23.6637 16.4215 21.8682 16.9322C17.5685 13.9487 15.6785 14.5669 15.6785 14.5669C14.4567 17.7439 15.2285 20.0903 15.4602 20.6731C14.0225 22.2886 13.1427 24.345 13.1427 26.865C13.1427 35.703 18.3965 37.6838 23.3937 38.2666C22.7502 38.8426 22.1675 39.8587 21.965 41.3504C20.6825 41.9399 17.4245 42.9602 15.4175 39.4344C15.4175 39.4344 14.2272 37.2179 11.9682 37.0559C11.9682 37.0559 9.77449 37.0267 11.8152 38.4577C11.8152 38.4577 13.289 39.1665 14.3127 41.8327C14.3127 41.8327 15.6335 45.9501 21.893 44.5551C21.9042 46.4834 21.9245 48.3007 21.9245 48.8497C21.9245 49.4594 21.5105 50.173 20.3877 49.9593C11.4462 46.9106 5 38.2616 5 28.0691C5 15.3273 15.0755 5 27.5 5Z" fill="white"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_d_8_4" x="0" y="0" width="55" height="55" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset/>
+<feGaussianBlur stdDeviation="2.5"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_8_4"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_8_4" result="shape"/>
+</filter>
+</defs>
+</svg>
