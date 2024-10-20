@@ -98,12 +98,12 @@ div {
     font-size: 0.85em;
 }
 
-#title:hover {
-    /*text-decoration: underline;*/
-    /*text-decoration-thickness: 0.02em;*/
-    /*text-decoration-color: rgba(255, 255, 255, 0.5);*/
-    cursor: pointer;
-}
+/*#title:hover {*/
+/*    text-decoration: underline;*/
+/*    text-decoration-thickness: 0.02em;*/
+/*    text-decoration-color: rgba(255, 255, 255, 0.5);*/
+/*    cursor: pointer;*/
+/*}*/
 
 #card-external {
     width: calc(270px + 250 * (100vw - 330px) / 1110);
@@ -111,7 +111,7 @@ div {
     background-color: black;
     border-radius: 1em;
     padding: 0.5em;
-    opacity: 0.9;
+    opacity: 0.8;
 }
 
 #card-internal {
@@ -123,7 +123,7 @@ div {
     font-size: 1.3em;
     color: white;
     background: transparent;
-    border: white 0.05rem solid;
+    border: white 0.01rem solid;
     border-radius: 0.5rem;
 }
 
