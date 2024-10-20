@@ -44,10 +44,10 @@
 }
 
 body {
-    width: 100vw;
-    height: 100vh;
+    min-width: 100vw;
+    min-height: 100vh;
     font-size: medium;
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 
 div {
@@ -56,27 +56,89 @@ div {
     justify-content: center;
 }
 
+h1 {
+    font-size: 1.3em;
+}
+
+/*hr {*/
+/*    color: white;*/
+/*    border: 0.05em solid white;*/
+/*    border-radius: 0.05em;*/
+/*    box-shadow: 0 0 0.07em #ffffff;*/
+/*}*/
+
+/**/
+
+.separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.separator::before,
+.separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 0.1em solid white;
+    box-shadow: 0 0 0.07em #ffffff;
+    border-radius: 0.05em;
+    text-align: center;
+}
+
+.separator:not(:empty)::before {
+    margin-right: .25em;
+}
+
+.separator:not(:empty)::after {
+    margin-left: .25em;
+}
+
+/**/
+
+.info {
+    font-family: Arial, sans-serif;
+    font-size: small;
+    font-weight: 0;
+    text-align: left;
+    text-shadow: 0 0 0.05em #ffffff;
+}
+
 #content {
     display: flex;
     flex-direction: column;
+    gap: 0.5rem;
     align-items: center;
     height: 100vh;
 }
 
 .sparkle {
     position: absolute;
-    width: 3rem;
-    height: 3rem;
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+#sparkle-top-right {
+    top: 0.8em;
+    right: 0.5em;
+}
+
+#sparkle-top-left {
+    top: 0.8em;
+    left: 0.5em;
 }
 
 #sparkle-bottom-right {
-    bottom: 0.65em;
-    right: 0.4em;
+    bottom: 0.8em;
+    right: 0.5em;
+}
+
+#sparkle-bottom-left {
+    bottom: 0.8em;
+    left: 0.5em;
 }
 
 #title {
-    width: 100%;
-    padding-left: 1rem;
+    /*width: 100%;*/
     flex-direction: row;
     align-items: center;
     justify-content: center;
@@ -108,10 +170,14 @@ div {
 #card-external {
     width: calc(270px + 250 * (100vw - 330px) / 1110);
     height: calc(250px + 100 * (100vw - 330px) / 1110);
-    background-color: black;
+    /*background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);*/
+    /*background-image: linear-gradient(to top, #c471f5 0%, #fa71cd 100%);*/
+    /*background-blend-mode: multiply,multiply;*/
+    background-image: linear-gradient(to right, #ec77ab 0%, #7873f5 100%);
+    box-shadow: 0 0 20px #7883f1;
     border-radius: 1em;
     padding: 0.5em;
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 #card-internal {
@@ -120,15 +186,17 @@ div {
     padding: 0.5em;
     height: calc(100% - 2 * 0.5em);
     font-family: 'Simplement', serif;
-    font-size: 1.3em;
+    font-size: 1.25em;
     color: white;
+    text-shadow: 0 0 0.07em #ffffff;
+    text-align: center;
     background: transparent;
     border: white 0.01rem solid;
     border-radius: 0.5rem;
 }
 
 #contact {
-    margin-top: 2.5rem;
+    margin-top: 2rem;
     display: flex;
     gap: 1rem;
     list-style: none;
@@ -138,7 +206,7 @@ div {
 #contact a {
     position: relative;
     display: block;
-    width: 2.5em;
+    width: 2em;
     height: 2em;
 }
 
@@ -158,7 +226,7 @@ div {
 }
 
 #contact #icon-telegram {
-    margin-left: -0.1em;
+    margin-left: -0.25em;
     background: url("../public/img/icon-telegram.svg") no-repeat top left;
     background-size: contain;
 }

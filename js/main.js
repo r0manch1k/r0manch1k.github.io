@@ -5,7 +5,7 @@ import {UnrealBloomPass} from 'three/addons/postprocessing/UnrealBloomPass.js'
 import {FirstPersonControls} from "three/addons/controls/FirstPersonControls.js";
 // import {AsciiEffect} from "three/addons/effects/AsciiEffect.js";
 
-let scene, camera, renderer, grid, composer, controls, clock;
+let scene, camera, renderer, grid, composer, controls, clock, stars;
 
 let colors = [
     0xfff,
@@ -27,7 +27,7 @@ function init() {
 
     //
 
-    camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.1, 10000);
+    camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 10000);
     camera.position.z = 0;
 
     //
@@ -59,9 +59,10 @@ function init() {
     const starsMat = new THREE.PointsMaterial({color: 0x888888});
 
     starsGeo.setFromPoints(points);
-    let line = new THREE.Points(starsGeo, starsMat)
-    scene.add(line)
+    stars = new THREE.Points(starsGeo, starsMat)
+    scene.add(stars)
 
+    //
     //
 
     const size = 30000;
@@ -74,7 +75,6 @@ function init() {
 
     scene.fog = new THREE.Fog(0x9700cc, -2000, 15000);
     // scene.fog = new THREE.FogExp2(0xfff, 0.0001);
-
 
     //
 
@@ -102,7 +102,6 @@ function init() {
     //
 
     controls = new FirstPersonControls(camera, renderer.domElement);
-    // controls.movementSpeed = 500;
     controls.lookSpeed = 0.1;
 
     animate();
@@ -110,6 +109,7 @@ function init() {
 }
 
 function animate() {
+
     requestAnimationFrame(animate);
 
     const delta = clock.getDelta();
@@ -120,9 +120,7 @@ function animate() {
         grid.position.z = 0;
     }
 
-
     camera.rotation.z += 0.5 * time
-
     // camera.fov -= 0.01 * time
     if (camera.fov < 2) {
         camera.fov = 100;
