@@ -47,7 +47,8 @@ body {
     min-width: 100vw;
     min-height: 100vh;
     font-size: medium;
-    /*overflow: hidden;*/
+    background-color: black;
+    overflow: hidden;
 }
 
 div {
