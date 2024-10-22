@@ -106,7 +106,6 @@ h1 {
     font-family: "Arial", serif;
     letter-spacing: normal;
     font-size: 0.52em;
-    /*word-break: break-all;*/
 }
 
 #content {
@@ -124,22 +123,22 @@ h1 {
 }
 
 #sparkle-top-right {
-    top: 0.25em;
+    top: 0.2em;
     right: 0.25em;
 }
 
 #sparkle-top-left {
-    top: 0.25em;
+    top: 0.2em;
     left: 0.25em;
 }
 
 #sparkle-bottom-right {
-    bottom: 0.25em;
+    bottom: 0.2em;
     right: 0.25em;
 }
 
 #sparkle-bottom-left {
-    bottom: 0.25em;
+    bottom: 0.2em;
     left: 0.25em;
 }
 
@@ -148,7 +147,7 @@ h1 {
     align-items: center;
     justify-content: center;
     gap: 0.05rem;
-    font-size: calc(40px + 30 * (100vw - 330px) / 1110);
+    font-size: calc(45px + 25 * (100vw - 330px) / 1110);
     letter-spacing: -0.05em;
     color: white;
     text-shadow: 0 0 0.07em #ffffff;
@@ -174,10 +173,6 @@ h1 {
 #card-external {
     width: calc(270px + 250 * (100vw - 330px) / 1110);
     height: calc(250px + 100 * (100vw - 330px) / 1110);
-    /*background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);*/
-    /*background-image: linear-gradient(to top, #c471f5 0%, #fa71cd 100%);*/
-    /*background-image: linear-gradient(to right, #ec77ab 0%, #7873f5 100%);*/
-    /*background-image: linear-gradient(-225deg, #65379B 0%, #886AEA 53%, #6457C6 100%);*/
     background-image: linear-gradient(-225deg, #7742B2 0%, #F180FF 52%, #FD8BD9 100%);
     box-shadow: 0 0 20px #7883f1;
     border-radius: 1em;
@@ -192,12 +187,9 @@ h1 {
     height: calc(100% - 2 * 0.5em);
     font-family: 'Simplement', serif;
     letter-spacing: -0.05em;
-    font-size: calc(17.5px + 2 * (100vw - 330px) / 1110);;
-    /*20px*/
+    font-size: calc(17px + 2 * (100vw - 330px) / 1110);;
     color: white;
     text-shadow: 0 0 0.07em #ffffff;
-    /*text-align: center;*/
-    /*word-break: break-all;*/
     background: transparent;
     border: white 0.01rem solid;
     border-radius: 0.5rem;
@@ -215,7 +207,7 @@ h1 {
     flex-direction: column;
     gap: 0.035em;
     margin-right: auto;
-    text-align: left;
+    margin-bottom: auto;
 }
 
 #card-footer-separator {
@@ -223,16 +215,14 @@ h1 {
 }
 
 #card-footer-icon {
-    width: 2.25em;
+    height: 2.25em;
     margin-left: auto;
 }
 
 #contact {
-    margin-top: 2rem;
     display: flex;
     gap: 1rem;
     list-style: none;
-    position: absolute;
 }
 
 #contact a {
@@ -310,13 +300,14 @@ canvas {
     -webkit-animation: title-translate-down 2s ease-in-out forwards;
 }
 
-
 @-webkit-keyframes title-translate-down {
     from {
         margin-top: 0;
+        margin-bottom: 0;
     }
     to {
-        margin-top: 30%;
+        margin-top: calc(100vh / 2);
+        margin-bottom: calc(-100vh / 20);
     }
 }
 
@@ -327,10 +318,12 @@ canvas {
 
 @-webkit-keyframes title-translate-up {
     from {
-        margin-top: 30%
+        margin-top: calc(100vh / 2);
+        margin-bottom: calc(-100vh / 20);
     }
     to {
         margin-top: 0;
+        margin-bottom: 0;
     }
 }
 

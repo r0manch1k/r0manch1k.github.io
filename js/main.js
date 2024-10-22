@@ -7,15 +7,15 @@ import {FirstPersonControls} from "three/addons/controls/FirstPersonControls.js"
 
 let title, card, isCardHidden = false, scene, camera, renderer, grid, composer, controls, clock, stars;
 
-let colors = [
-    0xfff,
-    0x3c8296,
-    0xf04114,
-    0xf6019d,
-    0x9700cc,
-    0xffd319,
-    0xd24922
-]
+// let colors = [
+//     0xfff,
+//     0x3c8296,
+//     0xf04114,
+//     0xf6019d,
+//     0x9700cc,
+//     0xffd319,
+//     0xd24922
+// ]
 
 function init() {
 
@@ -145,9 +145,9 @@ function animate() {
     composer.render(scene, camera);
 }
 
-const goHome = () => {
-    window.location.assign("index.html");
-}
+// const goHome = () => {
+//     window.location.assign("index.html");
+// }
 
 const setFavicon = () => {
     const faviconSVG = document.querySelector("#favicon-svg");
@@ -187,33 +187,27 @@ function resizeRendererToDisplaySize(renderer) {
 
 function hideCard() {
     if (isCardHidden) {
+        title.classList.remove("title-translate-down");
+        title.classList.add("title-translate-up");
         card.classList.remove("card-hide");
         card.classList.add("card-show");
     } else {
         card.classList.remove("card-show");
         card.classList.add("card-hide");
+        title.classList.remove("title-translate-up");
+        title.classList.add("title-translate-down");
     }
 
     setTimeout(() => {
-        if (isCardHidden) {
-            title.classList.remove("title-translate-down");
-            title.classList.add("title-translate-up");
-        } else {
-            title.classList.remove("title-translate-up");
-            title.classList.add("title-translate-down");
-        }
         isCardHidden = !isCardHidden;
     }, 1500)
-}``
+}
 
 document.addEventListener('DOMContentLoaded', () => {
-
     init();
-
 });
 
 window.addEventListener('resize', () => {
-
     let domElement = renderer.domElement;
 
     camera.aspect = window.innerWidth / window.innerHeight;
@@ -224,5 +218,4 @@ window.addEventListener('resize', () => {
     }
     camera.updateProjectionMatrix();
     controls.handleResize();
-
 });
