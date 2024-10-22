@@ -4,8 +4,10 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="apple-touch-icon" sizes="180x180" href="/public/img/apple-touch-icon.png">
-    <link rel="icon" type="image/png" href="/public/img/favicon.ico">
+    <link id="favicon-svg" rel="icon" href="/img/favicons/icon.svg" type="image/svg+xml">
+    <link id="favicon-android" rel="icon" type="image/png" sizes="192x192"  href="/img/favicons/android-icon-192x192.png">
+    <link id="favicon-just" rel="icon" type="image/png" sizes="96x96" href="/img/favicons/favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicons/apple-icon-180x180.png">
     <meta name="theme-color" content="black"/>
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <title>thesokolovsky.ru</title>
@@ -29,42 +31,48 @@
     </div>
     <div id="card-external" data-aos="flip-down">
         <div id="card-internal" data-aos="zoom-in">
-            <h1>about me</h1>
+            <h1>About me</h1>
             <br>
-            <p>My name is Roman Sokolovsky. I'm 19 y.o. I study at Far Eastern Federal University (Vladivostok, Russia). Fix bug with social meida icons</p>
+<!--            <p>My name is Roman Sokolovsky.</p>-->
+<!--            <p>I'm 19 y.o.</p>-->
+<!--            <p>I study at FEFU (Vladivostok, Russia).</p>-->
+            <p>Name: Roman Sokolovsky</p>
             <br>
-            <div class="separator">what else</div>
-<!--            <p class="info">I don't know why but icons below this card appear only when window size is small</p>-->
+            <p>Age: 19 y.o.</p>
+            <br>
+            <p>Education: Far Eastern Federal University (Vladivostok, Russia)</p>
+            <br>
+            <div id="card-footer">
+                <div id="card-footer-content">
+                    <div id="card-footer-separator">
+                        <div class="separator">thesokolovsky.ru</div>
+                        <div>©</div>
+                    </div>
+                    <p class="info">HINT: Click on background area to close that good-looking card and walk into the light. I need to write one more sentence but im not come up with one yet</p>
+                </div>
+                <img id="card-footer-icon" src="/public/img/icon.svg" alt="icon">
+            </div>
+            <img class="sparkle" id="sparkle-top-right" src="/public/img/sparkle.svg" alt="sparkle">
         </div>
-        <img class="sparkle" id="sparkle-top-right" src="/public/img/sparkle.svg" alt="sparkle">
-        <img class="sparkle" id="sparkle-top-left" src="/public/img/sparkle.svg" alt="sparkle">
     </div>
     <div id="footer" data-aos="zoom-out">
         <ul id="contact">
             <li>
-                <a id="icon-github" href="https://github.com/r0manch1k">
-                    <!--                    <object data="public/img/icon-github.svg" type="image/svg+xml"></object>-->
-                </a>
+                <a id="icon-github" href="https://github.com/r0manch1k"></a>
             </li>
             <li>
-                <a id="icon-spotify"
-                   href="https://open.spotify.com/user/31sd7xdivd73oji3nq5s4o3obp6q?si=a8789747c86840de">
-                    <!--                    <object data="public/img/icon-spotify.svg" type="image/svg+xml"></object>-->
-                </a>
+                <a id="icon-spotify" href="https://open.spotify.com/user/31sd7xdivd73oji3nq5s4o3obp6q?si=a8789747c86840de"></a>
             </li>
             <li>
-                <a id="icon-vkontakte" href="https://vk.com/romansokolovsky">
-                    <!--                    <object data="public/img/icon-vkontakte.svg" type="image/svg+xml"></object>-->
-                </a>
+                <a id="icon-vkontakte" href="https://vk.com/romansokolovsky"></a>
             </li>
             <li>
-                <a id="icon-telegram" href="https://t.me/r0manch1kk">
-                    <!--                    <object data="public/img/icon-telegram.svg" type="image/svg+xml"></object>-->
-                </a>
+                <a id="icon-telegram" href="https://t.me/r0manch1kk"></a>
             </li>
         </ul>
     </div>
 </div>
+<canvas></canvas>
 </body>
 <script>
     AOS.init({

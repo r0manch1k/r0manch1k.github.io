@@ -5,7 +5,7 @@ import {UnrealBloomPass} from 'three/addons/postprocessing/UnrealBloomPass.js'
 import {FirstPersonControls} from "three/addons/controls/FirstPersonControls.js";
 // import {AsciiEffect} from "three/addons/effects/AsciiEffect.js";
 
-let scene, camera, renderer, grid, composer, controls, clock, stars;
+let title, card, isCardHidden = false, scene, camera, renderer, grid, composer, controls, clock, stars;
 
 let colors = [
     0xfff,
@@ -18,6 +18,18 @@ let colors = [
 ]
 
 function init() {
+
+    window
+        .matchMedia("(prefers-color-scheme: dark)")
+        .addEventListener("change", setFavicon)
+    setFavicon()
+
+    // document.querySelector("#title").addEventListener("click", goHome)
+    title = document.querySelector("#title")
+    card = document.querySelector("#card-external")
+    title.addEventListener("click", hideCard);
+
+    //
 
     clock = new THREE.Clock();
 
@@ -42,7 +54,16 @@ function init() {
     const starsGeo = new THREE.BufferGeometry();
     const points = []
 
-    for (let i = 0; i < 5000; i++) {
+    let starsCount;
+
+    const mediaQuery = window.matchMedia('(max-width: 415px)')
+    if (mediaQuery.matches) {
+        starsCount = 7000
+    } else {
+        starsCount = 5000
+    }
+
+    for (let i = 0; i < starsCount; i++) {
         const vertex_p = new THREE.Vector3();
         vertex_p.x = Math.random() * 2000;
         vertex_p.y = Math.random() * 2000 - 10;
@@ -63,7 +84,6 @@ function init() {
     scene.add(stars)
 
     //
-    //
 
     const size = 30000;
     const divisions = 150;
@@ -74,7 +94,6 @@ function init() {
     //
 
     scene.fog = new THREE.Fog(0x9700cc, -2000, 15000);
-    // scene.fog = new THREE.FogExp2(0xfff, 0.0001);
 
     //
 
@@ -113,27 +132,45 @@ function animate() {
     requestAnimationFrame(animate);
 
     const delta = clock.getDelta();
-    const time = clock.getElapsedTime() * 10;
 
-    grid.position.z += 2;
+    grid.position.z += 70 * delta;
     if (grid.position.z > 2000) {
         grid.position.z = 0;
     }
 
-    camera.rotation.z += 0.5 * time
-    // camera.fov -= 0.01 * time
-    if (camera.fov < 2) {
-        camera.fov = 100;
-        camera.rotation.z = 0
-    }
     camera.updateProjectionMatrix();
 
     controls.update(delta);
 
-    // renderer.render(scene, camera);
     composer.render(scene, camera);
 }
 
+const goHome = () => {
+    window.location.assign("index.html");
+}
+
+const setFavicon = () => {
+    const faviconSVG = document.querySelector("#favicon-svg");
+    faviconSVG.href = (window.matchMedia("(prefers-color-scheme: dark)").matches)
+        ? "/public/img/favicons/icon.svg"
+        : "/public/img/favicons/icon-black.svg";
+
+    const faviconAndroid = document.querySelector("#favicon-android");
+    faviconAndroid.href = (window.matchMedia("(prefers-color-scheme: dark)").matches)
+        ? "/public/img/favicons/android-icon-192x192.png"
+        : "/public/img/favicons/android-icon-192x192-black.png";
+
+    const faviconJust = document.querySelector("#favicon-just");
+    faviconJust.href = (window.matchMedia("(prefers-color-scheme: dark)").matches)
+        ? "/public/img/favicons/favicon-96x96.png"
+        : "/public/img/favicons/favicon-96x96-black.png";
+
+    const faviconApple = document.querySelector('link[rel="apple-touch-icon"]');
+    faviconApple.href = (window.matchMedia("(prefers-color-scheme: dark)").matches)
+        ? "/public/img/favicons/apple-icon-180x180.png"
+        : "/public/img/favicons/apple-icon-180x180-black.png";
+    faviconApple.type = "image/svg+xml"
+};
 
 function resizeRendererToDisplaySize(renderer) {
 
@@ -146,8 +183,28 @@ function resizeRendererToDisplaySize(renderer) {
         renderer.setSize(width, height, false);
     }
     return needResize;
-
 }
+
+function hideCard() {
+    if (isCardHidden) {
+        card.classList.remove("card-hide");
+        card.classList.add("card-show");
+    } else {
+        card.classList.remove("card-show");
+        card.classList.add("card-hide");
+    }
+
+    setTimeout(() => {
+        if (isCardHidden) {
+            title.classList.remove("title-translate-down");
+            title.classList.add("title-translate-up");
+        } else {
+            title.classList.remove("title-translate-up");
+            title.classList.add("title-translate-down");
+        }
+        isCardHidden = !isCardHidden;
+    }, 1500)
+}``
 
 document.addEventListener('DOMContentLoaded', () => {
 
