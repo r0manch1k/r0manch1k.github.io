@@ -1,38 +1,16 @@
 @font-face {
     font-family: 'Klarissa Regular';
     font-style: normal;
-    font-weight: normal;
     font-display: block;
     src: local('Klarissa Regular'), url('fonts/klarissa/Klarissa.woff') format('woff');
 }
 
-
-@font-face {
-    font-family: 'Klarissa Contour Regular';
-    font-style: normal;
-    font-weight: normal;
-    font-display: block;
-    src: local('Klarissa Contour Regular'), url('fonts/klarissa/KlarissaContour.woff') format('woff');
-}
-
-
-@font-face {
-    font-family: 'Klarissa Shadow Regular';
-    font-style: normal;
-    font-weight: normal;
-    font-display: block;
-    src: local('Klarissa Shadow Regular'), url('fonts/klarissa/KlarissaShadow.woff') format('woff');
-}
-
-
 @font-face {
     font-family: 'Simplement';
     font-style: normal;
-    font-weight: normal;
     font-display: block;
     src: local('Simplement'), url('fonts/simplement/simplement.woff') format('woff');
 }
-
 
 @font-face {
     font-family: 'Shatter';
@@ -42,22 +20,23 @@
     src: local('Shatter'), url('fonts/shatterstd/shatterstd.woff') format('woff');
 }
 
-
 * {
     margin: 0;
     padding: 0;
 }
 
 body {
-    width: 100vw;
-    height: 100vh;
+    min-width: 100vw;
+    min-height: 100vh;
     font-size: medium;
     background-color: black;
-    overflow: hidden;
+    /*overflow: hidden;*/;
 }
 
 div {
     display: flex;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     align-items: center;
     justify-content: center;
 
@@ -71,14 +50,17 @@ div {
 }
 
 h1 {
+    font-family: 'Klarissa', sans-serif;
     font-size: 1em;
     font-weight: normal;
-    text-decoration: underline;
+    /*text-decoration: underline;*/
 }
 
 .separator {
     width: 100%;
     display: flex;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     align-items: center;
     text-align: left;
     margin-right: auto;
@@ -87,7 +69,7 @@ h1 {
 .separator::after {
     content: '';
     flex: 1;
-    border-bottom: 0.1em solid white;
+    border: 0.01rem solid white;
     box-shadow: 0 0 0.07em #ffffff;
     border-radius: 0.05em;
 }
@@ -99,7 +81,7 @@ h1 {
 
 .info {
     width: 100%;
-    font-family: "Arial", serif;
+    font-family: "Arial", "Helvetica", sans-serif;
     letter-spacing: normal;
     font-size: 0.52em;
 }
@@ -132,6 +114,8 @@ h1 {
 
 #content {
     display: flex;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     flex-direction: column;
     gap: 0.5rem;
     align-items: center;
@@ -169,8 +153,8 @@ h1 {
 #card-external {
     width: calc(270px + 250 * (100vw - 330px) / 1110);
     height: calc(250px + 100 * (100vw - 330px) / 1110);
-    background-image: linear-gradient(-225deg, #7742B2 0%, #F180FF 52%, #FD8BD9 100%);
-    box-shadow: 0 0 20px #7883f1;
+    background-image: linear-gradient(-225deg, #f56de7 0%, #daaaf1 48%, #6654F1 100%);
+    box-shadow: 0 0 0.5em #7883f1;
     border-radius: 1em;
     padding: 0.5em;
     opacity: 0.9;
@@ -183,12 +167,22 @@ h1 {
     height: calc(100% - 2 * 0.5em);
     font-family: 'Simplement', serif;
     letter-spacing: -0.05em;
-    font-size: calc(17px + 3 * (100vw - 330px) / 1110);;
+    font-size: calc(17px + 3 * (100vw - 330px) / 1110);
+    font-weight: lighter;
     color: white;
     text-shadow: 0 0 0.07em #ffffff;
     background: transparent;
-    border: white 0.01rem solid;
+    border: 0.01rem solid white;
     border-radius: 0.5rem;
+}
+
+#card-content {
+    flex-direction: column;
+    font-size: calc(13px + 4 * (100vw - 330px) / 1110);
+}
+
+.card-content-p {
+    margin-right: auto;
 }
 
 #card-footer {
@@ -217,6 +211,8 @@ h1 {
 
 #contact {
     display: flex;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     gap: 1rem;
     list-style: none;
 }
@@ -260,10 +256,12 @@ canvas {
 
 .card-hide {
     -webkit-animation: card-hide 2s forwards;
+    -moz-animation: card-hide 2s forwards;
 }
 
 .card-show {
     -webkit-animation: card-show 2s forwards;
+    -moz-animation: card-show 2s forwards;
 }
 
 @-webkit-keyframes card-hide {
@@ -272,6 +270,7 @@ canvas {
         transform: scaleY(1);
         height: calc(250px + 100 * (100vw - 330px) / 1110);
     }
+
     to {
         opacity: 0;
         transform: scaleY(0);
@@ -285,6 +284,7 @@ canvas {
         transform: scaleY(0);
         height: 0;
     }
+
     to {
         opacity: 1;
         transform: scaleY(1);
@@ -294,6 +294,7 @@ canvas {
 
 .title-translate-down {
     -webkit-animation: title-translate-down 2s forwards;
+    -moz-animation: title-translate-down 2s forwards;
 }
 
 @-webkit-keyframes title-translate-down {
@@ -301,26 +302,26 @@ canvas {
         margin-top: 0;
         margin-bottom: 0;
     }
+
     to {
         margin-top: calc(100vh / 2);
-        margin-bottom: calc(-100vh / 18);
+        margin-bottom: calc(-100vh / 22);
     }
 }
 
 .title-translate-up {
     -webkit-animation: title-translate-up 2s forwards;
+    -moz-animation: title-translate-up 2s forwards;
 }
-
 
 @-webkit-keyframes title-translate-up {
     from {
         margin-top: calc(100vh / 2);
-        margin-bottom: calc(-100vh / 18);
+        margin-bottom: calc(-100vh / 22);
     }
+
     to {
         margin-top: 0;
         margin-bottom: 0;
     }
 }
-
-
