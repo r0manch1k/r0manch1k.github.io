@@ -303,7 +303,7 @@ canvas {
     }
     to {
         margin-top: calc(100vh / 2);
-        margin-bottom: calc(-100vh / 20);
+        margin-bottom: calc(-100vh / 18);
     }
 }
 
@@ -315,7 +315,7 @@ canvas {
 @-webkit-keyframes title-translate-up {
     from {
         margin-top: calc(100vh / 2);
-        margin-bottom: calc(-100vh / 20);
+        margin-bottom: calc(-100vh / 18);
     }
     to {
         margin-top: 0;
