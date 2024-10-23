@@ -23,7 +23,7 @@
 :root {
     --title-font-size-small: calc(45px + 30 * (100vw - 330px) / 1110);
     --title-font-size-big: calc(45px + 80 * (100vw - 330px) / 1110);
-    --card-font-size: calc(17px + 5 * (100vw - 330px) / 1110);
+    --card-font-size: calc(15px + 5 * (100vw - 330px) / 1110);
 }
 
 * {
@@ -63,7 +63,7 @@ div {
 
 h1 {
     font-family: 'Klarissa Regular', serif;
-    font-size: 1em;
+    font-size: 1.5em;
     font-weight: normal;
     /*text-decoration: underline;*/
 }
@@ -109,28 +109,7 @@ h1 {
 }
 
 .sparkle {
-    width: 2rem;
-    height: 2rem;
-}
-
-#sparkle-top-right {
-    top: 0.2em;
-    right: 0.25em;
-}
-
-#sparkle-top-left {
-    top: 0.2em;
-    left: 0.25em;
-}
-
-#sparkle-bottom-right {
-    bottom: 0.2em;
-    right: 0.25em;
-}
-
-#sparkle-bottom-left {
-    bottom: 0.2em;
-    left: 0.25em;
+    height: 2.15rem;
 }
 
 #content {
@@ -205,8 +184,8 @@ h1 {
 #card-internal {
     display: block;
     width: 100%;
-    padding: 0.5em;
-    height: calc(100% - 2 * 0.5em);
+    padding: 0.2em 0.5em;
+    height: calc(100% - 2 * 0.2em);
     font-family: 'Simplement', serif;
     letter-spacing: -0.05em;
     font-size: var(--card-font-size);
@@ -229,6 +208,10 @@ h1 {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
+
+    @media (min-width: 900px) {
+        margin-bottom: 0.55em;
+    }
 }
 
 #card-content {
