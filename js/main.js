@@ -58,9 +58,9 @@ function init() {
 
     const mediaQuery = window.matchMedia('(max-width: 415px)')
     if (mediaQuery.matches) {
-        starsCount = 7000
+        starsCount = 8000
     } else {
-        starsCount = 5000
+        starsCount = 6000
     }
 
     for (let i = 0; i < starsCount; i++) {
