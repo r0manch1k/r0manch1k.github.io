@@ -7,7 +7,7 @@ import {FirstPersonControls} from "three/addons/controls/FirstPersonControls.js"
 
 let title, card, isCardHidden = false;
 let scene, camera, renderer, grid, composer, controls, clock, stars;
-let fovSpeed = 10, isItDark = false;
+let fovSpeed = 10, isItDark = false, cameraDefaultFOV = 120;
 
 // let colors = [
 //     0xfff,
@@ -41,7 +41,7 @@ function init() {
 
     //
 
-    camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 10000);
+    camera = new THREE.PerspectiveCamera(cameraDefaultFOV, window.innerWidth / window.innerHeight, 1, 10000);
     camera.position.z = 0;
 
     //
@@ -156,7 +156,7 @@ function animate() {
 
 function painlessTransition(delta) {
     if (!isCardHidden) {
-        camera.fov += (60 - camera.fov) * 5 * delta;
+        camera.fov += (cameraDefaultFOV - camera.fov) * 5 * delta;
         return;
     }
 
@@ -169,7 +169,7 @@ function painlessTransition(delta) {
     }
 
     if (isItDark) {
-        camera.fov -= 8 * fovSpeed * delta;
+        camera.fov -= 10 * fovSpeed * delta;
     } else {
         camera.fov += fovSpeed * delta;
     }
