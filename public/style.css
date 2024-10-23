@@ -76,8 +76,6 @@ h1 {
     text-decoration: underline;
 }
 
-/**/
-
 .separator {
     width: 100%;
     display: flex;
@@ -99,21 +97,11 @@ h1 {
     margin-right: 0.25em;
 }
 
-/**/
-
 .info {
     width: 100%;
     font-family: "Arial", serif;
     letter-spacing: normal;
     font-size: 0.52em;
-}
-
-#content {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    align-items: center;
-    height: 100vh;
 }
 
 .sparkle {
@@ -140,6 +128,14 @@ h1 {
 #sparkle-bottom-left {
     bottom: 0.2em;
     left: 0.25em;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+    height: 100vh;
 }
 
 #title {
@@ -187,7 +183,7 @@ h1 {
     height: calc(100% - 2 * 0.5em);
     font-family: 'Simplement', serif;
     letter-spacing: -0.05em;
-    font-size: calc(17px + 2 * (100vw - 330px) / 1110);;
+    font-size: calc(17px + 3 * (100vw - 330px) / 1110);;
     color: white;
     text-shadow: 0 0 0.07em #ffffff;
     background: transparent;
@@ -263,11 +259,11 @@ canvas {
 }
 
 .card-hide {
-    -webkit-animation: card-hide 2s ease-in-out forwards;
+    -webkit-animation: card-hide 2s forwards;
 }
 
 .card-show {
-    -webkit-animation: card-show 2s ease-in-out forwards;
+    -webkit-animation: card-show 2s forwards;
 }
 
 @-webkit-keyframes card-hide {
@@ -297,7 +293,7 @@ canvas {
 }
 
 .title-translate-down {
-    -webkit-animation: title-translate-down 2s ease-in-out forwards;
+    -webkit-animation: title-translate-down 2s forwards;
 }
 
 @-webkit-keyframes title-translate-down {
@@ -312,7 +308,7 @@ canvas {
 }
 
 .title-translate-up {
-    -webkit-animation: title-translate-up 2s ease-in-out forwards;
+    -webkit-animation: title-translate-up 2s forwards;
 }
 
 
