@@ -5,7 +5,9 @@ import {UnrealBloomPass} from 'three/addons/postprocessing/UnrealBloomPass.js'
 import {FirstPersonControls} from "three/addons/controls/FirstPersonControls.js";
 // import {AsciiEffect} from "three/addons/effects/AsciiEffect.js";
 
-let title, card, isCardHidden = false, scene, camera, renderer, grid, composer, controls, clock, stars;
+let title, card, isCardHidden = false;
+let scene, camera, renderer, grid, composer, controls, clock, stars;
+let fovSpeed = 10, isItDark = false;
 
 // let colors = [
 //     0xfff,
@@ -39,7 +41,7 @@ function init() {
 
     //
 
-    camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 10000);
+    camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 10000);
     camera.position.z = 0;
 
     //
@@ -123,6 +125,7 @@ function init() {
     controls = new FirstPersonControls(camera, renderer.domElement);
     controls.lookSpeed = 0.1;
 
+
     animate();
 
 }
@@ -138,9 +141,11 @@ function animate() {
         grid.position.z = 0;
     }
 
+    painlessTransition(delta);
+
     camera.updateProjectionMatrix();
 
-    controls.update(delta);
+    // controls.update(delta);
 
     composer.render(scene, camera);
 }
@@ -148,6 +153,27 @@ function animate() {
 // const goHome = () => {
 //     window.location.assign("index.html");
 // }
+
+function painlessTransition(delta) {
+    if (!isCardHidden) {
+        camera.fov += (60 - camera.fov) * 5 * delta;
+        return;
+    }
+
+    if (camera.fov >= 180) {
+        isItDark = true;
+    }
+
+    if (camera.fov < 0) {
+        isItDark = false;
+    }
+
+    if (isItDark) {
+        camera.fov -= 8 * fovSpeed * delta;
+    } else {
+        camera.fov += fovSpeed * delta;
+    }
+}
 
 const setFavicon = () => {
     const faviconSVG = document.querySelector("#favicon-svg");
@@ -217,5 +243,5 @@ window.addEventListener('resize', () => {
         camera.aspect = canvas.clientWidth / canvas.clientHeight;
     }
     camera.updateProjectionMatrix();
-    controls.handleResize();
+    // controls.handleResize();
 });

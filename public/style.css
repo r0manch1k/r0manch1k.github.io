@@ -20,6 +20,12 @@
     src: local('Shatter'), url('fonts/shatterstd/shatterstd.woff') format('woff');
 }
 
+:root {
+    --title-font-size-small: calc(45px + 30 * (100vw - 330px) / 1110);
+    --title-font-size-big: calc(45px + 80 * (100vw - 330px) / 1110);
+    --card-font-size: calc(17px + 5 * (100vw - 330px) / 1110);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -103,7 +109,6 @@ h1 {
 }
 
 .sparkle {
-    position: absolute;
     width: 2rem;
     height: 2rem;
 }
@@ -162,7 +167,7 @@ h1 {
     justify-content: center;
 
     gap: 0.05rem;
-    font-size: calc(45px + 25 * (100vw - 330px) / 1110);
+    font-size: var(--title-font-size-small);
     letter-spacing: -0.05em;
     color: white;
     text-shadow: 0 0 0.07em #ffffff;
@@ -204,13 +209,26 @@ h1 {
     height: calc(100% - 2 * 0.5em);
     font-family: 'Simplement', serif;
     letter-spacing: -0.05em;
-    font-size: calc(17px + 3 * (100vw - 330px) / 1110);
+    font-size: var(--card-font-size);
     font-weight: lighter;
     color: white;
-    text-shadow: 0 0 0.07em #ffffff;
+    text-shadow: 0 0 0.045em #ffffff;
     background: transparent;
     border: 0.01rem solid white;
     border-radius: 0.5rem;
+}
+
+#card-header {
+    width: 100%;
+
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
 }
 
 #card-content {
@@ -218,7 +236,7 @@ h1 {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    font-size: calc(13px + 4 * (100vw - 330px) / 1110);
+    font-size: 0.85em;
 }
 
 .card-content-p {
@@ -308,13 +326,17 @@ canvas {
 }
 
 @-webkit-keyframes card-hide {
-    from {
+    0% {
         opacity: 1;
         transform: scaleY(1);
         height: calc(250px + 100 * (100vw - 330px) / 1110);
     }
 
-    to {
+    50% {
+        opacity: 0;
+    }
+
+    100% {
         opacity: 0;
         transform: scaleY(0);
         height: 0;
@@ -344,11 +366,13 @@ canvas {
     from {
         margin-top: 0;
         margin-bottom: 0;
+        font-size: var(--title-font-size-small);
     }
 
     to {
         margin-top: calc(100vh / 2);
         margin-bottom: calc(-100vh / 22);
+        font-size: var(--title-font-size-big);
     }
 }
 
@@ -361,10 +385,12 @@ canvas {
     from {
         margin-top: calc(100vh / 2);
         margin-bottom: calc(-100vh / 22);
+        font-size: var(--title-font-size-big);
     }
 
     to {
         margin-top: 0;
         margin-bottom: 0;
+        font-size: var(--title-font-size-small);
     }
 }
