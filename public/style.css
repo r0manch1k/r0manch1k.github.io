@@ -152,6 +152,8 @@ h1 {
     text-shadow: 0 0 0.07em #ffffff;
     background: transparent;
     border: none;
+
+    user-select: none;
 }
 
 #the {

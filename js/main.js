@@ -169,7 +169,7 @@ function painlessTransition(delta) {
     }
 
     if (isItDark) {
-        camera.fov -= 10 * fovSpeed * delta;
+        camera.fov -= 15 * fovSpeed * delta;
     } else {
         camera.fov += fovSpeed * delta;
     }
