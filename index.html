@@ -1,40 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="theme-color" content="black"/>
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="icon" href="/img/icon-new.svg" type="image/svg+xml">
-    <link rel="icon" type="image/png" sizes="96x96" href="public/img/android-chrome-512x512.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="public/img/apple-touch-icon.png">
-    <link rel="stylesheet" href="public/style.css"/>
-    <title>THESOKOLOVSKY.RU</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      id="favicon-svg"
+      rel="icon"
+      href="/img/favicons/icon.svg"
+      type="image/svg+xml"
+    />
+    <link
+      id="favicon-android"
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/img/favicons/android-icon-192x192.png"
+    />
+    <link
+      id="favicon-just"
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="/img/favicons/favicon-96x96.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/img/favicons/apple-icon-180x180.png"
+    />
+    <meta name="theme-color" content="black" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>thesokolovsky.ru</title>
+    <link rel="stylesheet" href="public/style.css" />
+    <!-- Add AOS library here -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+      integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+      integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- Add Three.js library here -->
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@v0.169.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@v0.169.0/examples/jsm/"
+        }
+      }
+    </script>
+  </head>
+  <body>
     <div id="content">
-        <h1>THE SOKOLOVSKY.RU</h1>
-        <div>
-            <ul id="contact">
-                <li>
-                    <a id="icon-github" href="https://github.com/r0manch1k"></a>
-                </li>
-                <li>
-                    <a id="icon-spotify"
-                       href="https://open.spotify.com/user/31sd7xdivd73oji3nq5s4o3obp6q?si=a8789747c86840de"></a>
-                </li>
-                <li>
-                    <a id="icon-vkontakte" href="https://vk.com/romansokolovsky"></a>
-                </li>
-                <li>
-                    <a id="icon-telegram" href="https://t.me/r0manch1kk"></a>
-                </li>
-                <li>
-                    <a id="icon" href="dawn/index.html"></a>
-                </li>
-            </ul>
+      <div id="title" data-aos="zoom-in">
+        <span id="the">the</span> <span id="sokolovsky">sokolovsky.ru</span>
+      </div>
+      <!-- <div id="card-external" data-aos="flip-down">
+        <div id="card-internal" data-aos="zoom-in">
+          <div id="card-header">
+            <h1>about me</h1>
+            <img class="sparkle" src="public/img/sparkle.svg" alt="sparkle" />
+          </div>
+          <div id="card-content">
+            <p class="card-content-p">
+              My name is Roman Sokolovsky. I'm 19 y.o. I study at Far Eastern
+              Federal University (Vladivostok, Russia). I'm in my second year.
+              My major is System Programming.
+            </p>
+            <br />
+            <p class="card-content-p">
+              I love music and coding. I'm currently trying to improve my skills
+              in web development, also in network programming.
+            </p>
+            <br />
+            <p class="card-content-p">
+              If you have the offer on cooperation, don't hesitate to let me
+              know.
+            </p>
+          </div>
+          <div id="card-footer">
+            <div id="card-footer-content">
+              <div id="card-footer-separator">
+                <div class="separator">thesokolovsky.ru</div>
+                <div>2024</div>
+              </div>
+              <p class="info">
+                HINT: Click on title to close that <s>good-looking</s> card and
+                walk into the light.
+              </p>
+            </div>
+            <img id="card-footer-icon" src="/public/img/icon.svg" alt="icon" />
+          </div>
         </div>
+      </div> -->
+      <div id="footer" data-aos="zoom-out">
+        <ul id="contact">
+          <li>
+            <a id="icon-github" href="https://github.com/r0manch1k"></a>
+          </li>
+          <li>
+            <a
+              id="icon-spotify"
+              href="https://open.spotify.com/user/31sd7xdivd73oji3nq5s4o3obp6q?si=a8789747c86840de"
+            ></a>
+          </li>
+          <li>
+            <a id="icon-vkontakte" href="https://vk.com/romansokolovsky"></a>
+          </li>
+          <li>
+            <a id="icon-telegram" href="https://t.me/r0manch1kk"></a>
+          </li>
+        </ul>
+      </div>
     </div>
-<!--    <p>ne ukral design a pozaimstvoval</p>-->
-</body>
+    <div id="canvas"></div>
+  </body>
+  <script>
+    AOS.init({
+      once: true,
+      duration: 1500,
+    });
+  </script>
+  <script type="module" src="js/main.js"></script>
 </html>
