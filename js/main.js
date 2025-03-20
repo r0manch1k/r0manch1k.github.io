@@ -10,6 +10,7 @@ let title,
   isCardHidden = true;
 let scene, camera, renderer, grid, composer, controls, clock, stars;
 let fovSpeed = 0,
+  starsGeo,
   isItDark = false,
   cameraDefaultFOV = 120;
 
@@ -51,6 +52,7 @@ function init() {
     10000
   );
   camera.position.z = 0;
+  camera.rotateX(Math.PI / 25);
 
   //
 
@@ -61,28 +63,25 @@ function init() {
 
   //
 
-  const starsGeo = new THREE.BufferGeometry();
+  starsGeo = new THREE.BufferGeometry();
   const points = [];
 
   let starsCount;
 
-  const mediaQuery = window.matchMedia("(max-width: 415px)");
-  if (mediaQuery.matches) {
-    starsCount = 8000;
-  } else {
-    starsCount = 4000;
-  }
+  const rotationMatrix = new THREE.Matrix4();
+
+  starsCount = 1700;
 
   for (let i = 0; i < starsCount; i++) {
     const vertex_p = new THREE.Vector3();
     vertex_p.x = Math.random() * 2000;
-    vertex_p.y = Math.random() * 2000 - 10;
+    vertex_p.y = Math.random() * 2000 - 100;
     vertex_p.z = -Math.random() * 1000 - 10;
     points.push(vertex_p);
 
     const vertex_n = new THREE.Vector3();
     vertex_n.x = -Math.random() * 2000;
-    vertex_n.y = Math.random() * 2000 - 10;
+    vertex_n.y = Math.random() * 2000 - 100;
     vertex_n.z = -Math.random() * 1000 - 10;
     points.push(vertex_n);
   }
@@ -96,7 +95,7 @@ function init() {
   //
 
   const size = 30000;
-  const divisions = 150;
+  const divisions = 80;
   grid = new THREE.GridHelper(size, divisions, 0x3c8296, 0x3c8296); // 0xf04114
   grid.position.y = -450;
   scene.add(grid);
@@ -121,8 +120,8 @@ function init() {
 
   const bloomPass = new UnrealBloomPass(
     new THREE.Vector2(window.innerWidth, window.innerHeight),
-    10,
-    1.2,
+    11,
+    1,
     0
   );
   composer.renderToScreen = true;
@@ -146,38 +145,22 @@ function animate() {
     grid.position.z = 0;
   }
 
-  painlessTransition(delta);
-
   camera.updateProjectionMatrix();
 
-  // controls.update(delta);
+  const positions = starsGeo.attributes.position.array;
+  const speed = delta * 50;
+
+  for (let i = 0; i < positions.length; i += 3) {
+    positions[i + 2] += speed;
+
+    if (positions[i + 2] > 10) {
+      positions[i + 2] = -1000 + (positions[i + 2] % 1000);
+    }
+  }
+
+  starsGeo.attributes.position.needsUpdate = true;
 
   composer.render(scene, camera);
-}
-
-// const goHome = () => {
-//     window.location.assign("index.html");
-// }
-
-function painlessTransition(delta) {
-  if (!isCardHidden) {
-    camera.fov += (cameraDefaultFOV - camera.fov) * 5 * delta;
-    return;
-  }
-
-  if (camera.fov >= 180) {
-    isItDark = true;
-  }
-
-  if (camera.fov < 0) {
-    isItDark = false;
-  }
-
-  if (isItDark) {
-    camera.fov -= 15 * fovSpeed * delta;
-  } else {
-    camera.fov += fovSpeed * delta;
-  }
 }
 
 const setFavicon = () => {
@@ -214,24 +197,6 @@ function resizeRendererToDisplaySize(renderer) {
     renderer.setSize(width, height, false);
   }
   return needResize;
-}
-
-function hideCard() {
-  if (isCardHidden) {
-    title.classList.remove("title-translate-down");
-    title.classList.add("title-translate-up");
-    card.classList.remove("card-hide");
-    card.classList.add("card-show");
-  } else {
-    card.classList.remove("card-show");
-    card.classList.add("card-hide");
-    title.classList.remove("title-translate-up");
-    title.classList.add("title-translate-down");
-  }
-
-  setTimeout(() => {
-    isCardHidden = !isCardHidden;
-  }, 1500);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
